@@ -1,0 +1,279 @@
+*, body{
+    margin: 0;
+    padding: 0;
+}
+body{
+    overflow-x: hidden;
+    cursor: none;
+}
+
+img{
+    object-fit: cover;
+}
+
+.rol{
+    width: 100vw;
+    height: 5vh;
+    background: #460799;
+    position: absolute;
+    z-index: 5;
+    transform: translateY(45vh);
+    animation: rol 4s;
+    opacity: 0;
+    mix-blend-mode: difference;
+    left: 5;
+}
+@keyframes rol {
+    0%{
+        width: 1vw;
+        opacity: 0.2;
+    }
+    100%{
+        width: 100vw;
+        opacity: 0.4;
+    }
+}
+
+.switch{
+    width: 100vw;
+    color: black;
+    z-index: 99;
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    transform: translateY(80vh);
+}
+.switch > h1{
+    font-size: 80px;
+    font-family: Poppins-Medium;
+    cursor: pointer;
+}
+.a-right{
+    position: absolute;
+    margin-left: 4vw;
+    animation: arrow 2s;
+    animation-iteration-count: infinite;
+}
+.a-left{
+    position: absolute;
+    margin-right: 4vw;
+    animation: arrow 2s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes arrow {
+    0%{
+        transform: scale(1);
+        transform: rotateZ(0deg);
+    }
+    40%{
+        transform: rotateZ(20deg);
+    }
+    70%{
+        transform: scale(1.2);
+    }
+    60%{
+        transform: rotateZ(-20deg)
+    }
+    100%{
+        transform: scale(1);
+        transform: rotateZ(0deg);
+    }
+}
+
+@keyframes animate {
+    0%{
+        filter: brightness(0.1);
+    }
+    100%{
+        filter: brightness(1);
+    }
+}
+
+.slide{
+    overflow-x: hidden;
+}
+
+.dark{
+    width: 100%;
+    height: 100%;
+    background: #00000015;
+    position: absolute;
+    z-index: 3;
+    animation: dark;
+    animation-duration: 5s;
+    animation-delay: 2s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes dark {
+    0%{
+        background: #00000015;
+    }
+    25%{
+        background: #00000025;
+    }
+    50%{
+        background: #00000035;
+    }
+    75%{
+        background: #00000025;
+    }
+    100%{
+        background: #00000015;
+    }
+}
+
+.p-layout{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    overflow: hidden;
+    background: #ffffff;
+}
+
+.p-textbox{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
+.box{
+    width: 25vw;
+    padding: 10px;
+    height: fit-content;
+    background: #ffffff;
+    animation: box 4s;
+    z-index: 99;
+}
+.box:hover{
+    background: #000;
+        color: #ffffff;
+}
+.box > h1{
+    font-size: 16px;
+    font-weight: 300;
+    font-family: Poppins-Medium;
+}
+
+@keyframes box {
+    0%{
+        background: #ffffff;
+        color: #000;
+    }
+    100%{
+        background: #000;
+        color: #ffffff;
+    }
+}
+
+.p-text{
+    width: 50%;
+    height: 100%;
+    position: relative;
+}
+
+.p-text-pad{
+    padding-inline: 5%;
+    padding-block: 5%;
+    width: 100%;
+    height: 100%;
+}
+
+.p-text-pad > h1{
+    font-family: Poppins-Medium;
+    font-weight: 300;
+    font-size: 34px;
+    padding-bottom: 10vh;
+}
+
+.p-num{
+    width: 70%;
+    height: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.p-num > h1{
+    font-size: 50px;
+    font-weight: 900;
+    font-family: CoveredByYourGrace-Regular;
+}
+
+.p-info{
+    width: 30vw;
+    height: 100vh;
+    position: absolute;
+    right: 25px;
+    top: 50;
+}
+.p-info > h1{
+    font-family: Poppins-Medium;
+    letter-spacing: 1px;
+    font-size: 60px;
+    font-weight: 200;
+    transform: rotate(270deg);
+}
+
+.p-text-img{
+    width: 25vw;
+    height: 40vh;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+.extra-small{
+    height: 55vh;
+}
+.p-text-img > img{
+    width: 100%;
+    height: 100%;
+}
+
+.p-img{
+    width: 50%;
+    height: 100%;
+    position: relative;
+}
+
+.p-img > img{
+    width: 100%;
+    min-height: 100vh;
+    filter: brightness(0.8);
+}
+
+.p-img-filter{
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 5;
+}
+/* .p-img-filter:hover{
+    animation: img 3s;
+    animation-delay: 0.5s;
+    transition: 1s;
+    cursor: pointer;
+} */
+
+@keyframes img {
+    0%{
+        width: 100%;
+        height: 100%;
+        backdrop-filter: brightness(0.2);
+    }
+    100%{
+        width: 100%;
+        height: 50%;
+        backdrop-filter: brightness(1.5);
+    }
+}
+
